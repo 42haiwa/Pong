@@ -4,7 +4,8 @@
 int main(void) {
 	sf::RenderWindow window{sf::VideoMode{800, 600}, "Pong"};
 
-	auto player = Player{sf::Vector2f{0, 300}};
+	auto player = Player{sf::Vector2f{0, 300.f}};
+	auto player2 = Player{sf::Vector2f{800.f - 20.f, 300.f}};
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -28,8 +29,10 @@ int main(void) {
 
 		window.clear();
 
-		player.update();
+		player.update(sf::Keyboard::Z, sf::Keyboard::S);
 		player.render(window);
+		player2.update(sf::Keyboard::Up, sf::Keyboard::Down);
+		player2.render(window);
 
 		window.display();
 	}

@@ -10,7 +10,7 @@ class PongEntity {
     
     public:
         PongEntity(sf::Vector2f const & position);
-        virtual void update() = 0;
+        void update();
         virtual void render(sf::RenderWindow & renderWindow) = 0;
 };
 

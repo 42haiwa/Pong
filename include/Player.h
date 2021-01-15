@@ -14,9 +14,9 @@ class Player : public PongEntity {
 
     public:
         Player(sf::Vector2f const & position);
-        void update() override;
+        void update(sf::Keyboard::Key upKey, sf::Keyboard::Key downKey);
         void render(sf::RenderWindow & renderWindow) override;
-        void checkKeyboard(sf::Time dt);
+        void checkKeyboard(sf::Time dt, sf::Keyboard::Key upKey, sf::Keyboard::Key downKey);
 };
 
 #endif

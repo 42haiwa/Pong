@@ -6,21 +6,21 @@ Player::Player(sf::Vector2f const & position) : PongEntity{position} {
     m_rectangle.setPosition(position);
 }
 
-void Player::update() {
+void Player::update(sf::Keyboard::Key upKey, sf::Keyboard::Key downKey) {
     sf::Time dt = m_clock.restart();
-    checkKeyboard(dt);
+    checkKeyboard(dt, upKey, downKey);
 }
 
 void Player::render(sf::RenderWindow & renderWindow) {
     renderWindow.draw(m_rectangle);
 }
 
-void Player::checkKeyboard(sf::Time dt) {
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+void Player::checkKeyboard(sf::Time dt, sf::Keyboard::Key upKey, sf::Keyboard::Key downKey) {
+    if (sf::Keyboard::isKeyPressed(upKey)) {
         m_position.y -= m_speedMove * dt.asSeconds();
     }
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+    if (sf::Keyboard::isKeyPressed(downKey)) {
         m_position.y += m_speedMove * dt.asSeconds();
     }
 
