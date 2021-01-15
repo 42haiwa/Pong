@@ -8,10 +8,15 @@ class Player : public PongEntity {
     private:
         sf::RectangleShape m_rectangle;
 
+        static constexpr float m_sizeX{20.f};
+        static constexpr float m_sizeY{120.f};
+        static constexpr float m_speedMove{600.f};
+
     public:
         Player(sf::Vector2f const & position);
         void update() override;
         void render(sf::RenderWindow & renderWindow) override;
+        void checkKeyboard(sf::Time dt);
 };
 
 #endif

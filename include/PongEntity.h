@@ -6,6 +6,7 @@
 class PongEntity {
     protected:
         sf::Vector2f m_position;
+        sf::Clock m_clock;
     
     public:
         PongEntity(sf::Vector2f const & position);
