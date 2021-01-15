@@ -1,7 +1,10 @@
 #include <SFML/Graphics.hpp>
+#include "Player.h"
 
 int main(void) {
 	sf::RenderWindow window{sf::VideoMode{800, 600}, "Pong"};
+
+	auto player = Player{sf::Vector2f{0, 300}};
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -24,6 +27,10 @@ int main(void) {
 		}
 
 		window.clear();
+
+		player.update();
+		player.render(window);
+
 		window.display();
 	}
 
