@@ -7,7 +7,7 @@ int main(void) {
 
 	auto player = Player{sf::Vector2f{0, 300.f}};
 	auto player2 = Player{sf::Vector2f{800.f - 20.f, 300.f}};
-	auto ball = Ball{sf::Vector2f{400.f, 300.f}};
+	auto ball = Ball{sf::Vector2f{400.f, 300.f}, &player, &player2};
 
 	while (window.isOpen()) {
 		sf::Event event;

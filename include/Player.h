@@ -18,6 +18,8 @@ class Player : public PongEntity {
         void update(sf::Keyboard::Key upKey, sf::Keyboard::Key downKey);
         void render(sf::RenderWindow & renderWindow) override;
         void checkKeyboard(sf::Time dt, sf::Keyboard::Key upKey, sf::Keyboard::Key downKey);
+        float getX() const;
+        float getY() const;
 };
 
 #endif

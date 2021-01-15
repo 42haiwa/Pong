@@ -33,3 +33,11 @@ void Player::checkKeyboard(sf::Time dt, sf::Keyboard::Key upKey, sf::Keyboard::K
 
     m_rectangle.setPosition(m_position);
 }
+
+float Player::getX() const {
+    return m_position.x;
+}
+
+float Player::getY() const {
+    return m_position.y;
+}
