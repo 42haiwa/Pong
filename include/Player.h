@@ -20,6 +20,7 @@ class Player : public PongEntity {
         void checkKeyboard(sf::Time dt, sf::Keyboard::Key upKey, sf::Keyboard::Key downKey);
         float getX() const;
         float getY() const;
+        sf::RectangleShape getRect() const;
 };
 
 #endif

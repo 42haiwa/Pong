@@ -41,3 +41,7 @@ float Player::getX() const {
 float Player::getY() const {
     return m_position.y;
 }
+
+sf::RectangleShape Player::getRect() const {
+    return m_rectangle;
+}

@@ -14,8 +14,8 @@ class Ball : public PongEntity {
         Player * m_player2;
 
         float m_angle{0.f};
-        float m_speedMoveX{500.f};
-        float m_speedMoveY{500.f};
+        float m_speedMoveX{400.f};
+        float m_speedMoveY{400.f};
 
         static constexpr float m_size{15.f};
 
@@ -24,6 +24,7 @@ class Ball : public PongEntity {
         void update();
         void render(sf::RenderWindow & renderWindow);
         void move(sf::Time dt);
+        bool checkCollision(Player * player);
 };
 
 #endif
