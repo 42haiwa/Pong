@@ -3,7 +3,7 @@
 Player::Player(sf::Vector2f const & position) : PongEntity{position} {
     m_rectangle = sf::RectangleShape{sf::Vector2f{m_sizeX, m_sizeY}};
     m_rectangle.setFillColor(sf::Color::White);
-    m_rectangle.setPosition(position);
+    m_rectangle.setPosition(m_position);
 }
 
 void Player::update(sf::Keyboard::Key upKey, sf::Keyboard::Key downKey) {

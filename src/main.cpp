@@ -1,11 +1,13 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
+#include "Ball.h"
 
 int main(void) {
 	sf::RenderWindow window{sf::VideoMode{800, 600}, "Pong"};
 
 	auto player = Player{sf::Vector2f{0, 300.f}};
 	auto player2 = Player{sf::Vector2f{800.f - 20.f, 300.f}};
+	auto ball = Ball{sf::Vector2f{400.f, 300.f}};
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -28,6 +30,9 @@ int main(void) {
 		}
 
 		window.clear();
+
+		ball.update();
+		ball.render(window);
 
 		player.update(sf::Keyboard::Z, sf::Keyboard::S);
 		player.render(window);
