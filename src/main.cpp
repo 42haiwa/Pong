@@ -12,6 +12,12 @@ int main(void) {
 					window.close();
 					break;
 
+				case sf::Event::KeyReleased:
+					if (event.key.code == sf::Keyboard::Escape) {
+						window.close();
+					}
+					break;
+				
 				default:
 					break;
 			}
