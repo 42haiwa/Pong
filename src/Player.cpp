@@ -6,7 +6,11 @@ Player::Player(sf::Vector2f const & position) : PongEntity{position} {
     m_rectangle.setPosition(m_position);
 }
 
+void Player::update() {
+}
+
 void Player::update(sf::Keyboard::Key upKey, sf::Keyboard::Key downKey) {
+    update();
     sf::Time dt = m_clock.restart();
     checkKeyboard(dt, upKey, downKey);
 }
