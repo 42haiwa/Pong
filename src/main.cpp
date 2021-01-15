@@ -2,12 +2,16 @@
 #include "Player.h"
 #include "Ball.h"
 
+// TASK: Fix clock and pause
+
 int main(void) {
 	sf::RenderWindow window{sf::VideoMode{800, 600}, "Pong"};
 
 	auto player = Player{sf::Vector2f{0, 300.f}};
 	auto player2 = Player{sf::Vector2f{800.f - 20.f, 300.f}};
 	auto ball = Ball{sf::Vector2f{400.f, 300.f}, &player, &player2};
+
+	auto pause{false};
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -20,7 +24,11 @@ int main(void) {
 
 				case sf::Event::KeyReleased:
 					if (event.key.code == sf::Keyboard::Escape) {
-						window.close();
+						if (pause) {
+							pause = false;
+							break;
+						}
+						pause = true;
 					}
 					break;
 				
@@ -28,6 +36,8 @@ int main(void) {
 					break;
 			}
 		}
+
+		if (pause) continue;
 
 		window.clear();
 

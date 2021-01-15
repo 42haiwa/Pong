@@ -25,6 +25,8 @@ class Ball : public PongEntity {
         void render(sf::RenderWindow & renderWindow);
         void move(sf::Time dt);
         bool checkCollision(Player * player);
+        float getX() const;
+        float getY() const;
 };
 
 #endif

@@ -47,3 +47,11 @@ bool Ball::checkCollision(Player * player) {
 
     return false;
 }
+
+float Ball::getX() const {
+    return m_position.x;
+}
+
+float Ball::getY() const {
+    return m_position.y;
+}
